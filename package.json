@@ -1,0 +1,24 @@
+{
+  "name": "book-api",
+  "version": "1.0.0",
+  "description": "Node.js Book REST API with Express, Sequelize, and MySQL",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node.js",
+    "Express",
+    "Sequelize",
+    "MySQL",
+    "REST",
+    "API"
+  ],
+  "author": "www.ruangdeveloper.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  }
+}
