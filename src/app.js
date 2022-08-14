@@ -12,6 +12,7 @@ database.sync({ force: true }).then(() => {
     console.info("database synced")
 }).catch(err => {
     console.error("failed to sync database: " + err.message)
+    process.exit(1)
 })
 
 app.get("/", (req, res) => {
