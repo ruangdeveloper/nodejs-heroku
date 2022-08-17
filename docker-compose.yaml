@@ -1,0 +1,36 @@
+# optional since v1.27.0
+version: "3.9"
+# list service
+services:
+  # mendefinisikan database service
+  database:
+    # menggunakan image mysql:latest
+    image: "mysql:latest"
+    # port untuk database mysql
+    ports:
+      - "3306:3306"
+    # setting environment variable untuk mysql
+    environment:
+      MYSQL_DATABASE: nodejs_rest_api
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_password
+  # mendefinisikan web service
+  web:
+    # build image berdasarkan Dockerfile
+    build: .
+    # port untuk web service
+    ports:
+      - "3000:3000"
+    # jalankan web service setelah database service berjalan
+    depends_on:
+      - database
+    # setting environment variable untuk koneksi Database
+    # (sesuaikan dengan database service)
+    environment:
+      DB_HOST: database
+      DB_USER: db_user
+      DB_PASSWORD: db_password
+      DB_NAME: nodejs_rest_api
+    # restart saat terjadi error
+    restart: always
