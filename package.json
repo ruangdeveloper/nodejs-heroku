@@ -4,7 +4,10 @@
   "description": "Node.js Book REST API with Express, Sequelize, and MySQL",
   "main": "./src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/app.js"
+  },
+  "engines": {
+    "node": "16.x"
   },
   "keywords": [
     "Node.js",
